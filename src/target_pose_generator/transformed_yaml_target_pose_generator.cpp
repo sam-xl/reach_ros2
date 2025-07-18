@@ -13,9 +13,8 @@
 
 namespace reach_ros
 {
-TransformedYAMLTargetPoseGenerator::TransformedYAMLTargetPoseGenerator(std::string filename,
-                                                                     std::string points_frame,
-                                                                     std::string target_frame)
+TransformedYAMLTargetPoseGenerator::TransformedYAMLTargetPoseGenerator(std::string filename, std::string points_frame,
+                                                                       std::string target_frame)
   : reach::YAMLTargetPoseGenerator(filename)
   , points_frame_(std::move(points_frame))
   , target_frame_(std::move(target_frame))
@@ -41,8 +40,7 @@ reach::VectorIsometry3d TransformedYAMLTargetPoseGenerator::generate() const
   return target_poses;
 }
 
-reach::TargetPoseGenerator::ConstPtr
-TransformedYAMLTargetPoseGeneratorFactory::create(const YAML::Node& config) const
+reach::TargetPoseGenerator::ConstPtr TransformedYAMLTargetPoseGeneratorFactory::create(const YAML::Node& config) const
 {
   std::string filename = reach::get<std::string>(config, "poses");
   std::string source_frame = reach::get<std::string>(config, "points_frame");
