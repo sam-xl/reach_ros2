@@ -1,4 +1,2 @@
 # Append reach plugin library name to REACH_PLUGINS (if not already present)
-if [[ ":$REACH_PLUGINS:" != *":reach_ros_plugins:"* ]]; then
-    export REACH_PLUGINS="${REACH_PLUGINS:+$REACH_PLUGINS:}reach_ros_plugins"
-fi
+ament_append_unique_value REACH_PLUGINS "@PROJECT_NAME@_plugins"
