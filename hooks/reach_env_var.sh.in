@@ -1,2 +1,5 @@
+# Ensure that the REACH_PLUGINS environment variable is exported (ament_... does not do this)
+export REACH_PLUGINS="${REACH_PLUGINS:-}"
+
 # Append reach plugin library name to REACH_PLUGINS (if not already present)
 ament_append_unique_value REACH_PLUGINS "@PROJECT_NAME@_plugins"
