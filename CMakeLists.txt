@@ -93,7 +93,7 @@ install(DIRECTORY launch demo DESTINATION share/${PROJECT_NAME})
 
 # Install hook so REACH_PLUGINS env. var is updated appropriately
 ament_environment_hooks(
-  "${CMAKE_CURRENT_SOURCE_DIR}/hooks/reach_env_var.sh.in"
+  "${CMAKE_CURRENT_SOURCE_DIR}/hooks/reach_env_var.dsv.in"
 )
 
 ament_export_targets(${PROJECT_NAME}-targets HAS_LIBRARY_TARGET)
